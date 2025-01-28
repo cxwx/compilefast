@@ -12,6 +12,15 @@
 # cspell:disable
 jobs=6
 
+if [[ $(uname) != "Darwin" ]]; then
+  cd ${HOME}/software/corsika/corsikainterface/git
+  git pull
+  cd ${HOME}/software/coord_cx/git
+  git pull
+  cd ${HOME}/software/chenxufunc/git
+  git pull
+fi
+
 cd ${HOME}/software/corsika/corsikainterface/build/
 rm -rf ${HOME}/software/corsika/corsikainterface/build/*
 cmake ../git -GNinja
